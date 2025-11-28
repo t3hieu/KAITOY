@@ -1,0 +1,796 @@
+/* styles.css */
+
+
+
+/* ------------------- 1. VARIABLES & RESET ------------------- */
+
+:root {
+    --dark-bg: #03080B;
+    /* Nền rất tối */
+    --neon-teal: #00FFC2;
+    /* Màu xanh ngọc neon */
+    --accent-dark: #0F1D2B;
+    /* Màu nền cho các thẻ/nút */
+    --text-color: #E0E0E0;
+    --light-shadow: 0 0 10px rgba(0, 255, 194, 0.4);
+    /* Hiệu ứng ánh sáng neon */
+    --border-glow: 1px solid var(--neon-teal);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080D0D;
+    color: var(--text-color);
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.7rem;
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+    color: var(--neon-teal);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* ------------------- 2. BUTTONS & TYPOGRAPHY ------------------- */
+
+.action-btn,
+.cta-button,
+.rule-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 10px;
+    color: #080D0D;
+    left: 4px;
+    top: 4px;
+    background: #32FFDC;
+    box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.75), inset -4px -4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 99px;
+    outline: 4px solid rgba(50, 255, 220, 0.5);
+    outline-offset: 0px;
+    font-weight: 900;
+    font-size: 14px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    height: 40px;
+    text-transform: uppercase;
+}
+
+
+
+
+.action-btn:hover {
+    animation: jello-horizontal 0.9s both;
+}
+
+
+@keyframes jello-horizontal {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+h2 {
+    font-size: 28px !important;
+    font-weight: 700;
+    line-height: 130%;
+}
+
+.hero-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    /* padding-top: 100px; */
+}
+
+.sidebar-link {
+    background-color: var(--accent-dark);
+    color: var(--neon-teal);
+    border: var(--border-glow);
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: var(--light-shadow);
+}
+
+.section-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mini-title {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+/* ------------------- 4. LAYOUT SECTIONS ------------------- */
+
+/* HEADER */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    position: fixed;
+    z-index: 1;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    gap: 10px;
+    width: fit-content;
+    max-width: 1440px;
+    max-height: 80px;
+    min-width: 1000px;
+    background: linear-gradient(180deg, #111D1D 0%, #182828 100%);
+    ;
+    border-radius: 999px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+/* .logo { font-size: 1.8em; font-weight: 700; } */
+.nav-links a {
+    margin-left: 30px;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.nav-links a:hover {
+    color: #32FFDC;
+}
+
+/* HERO SECTION */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 200px 20px 100px 20px;
+    align-items: flex-start;
+    position: relative;
+
+}
+
+.light {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    mix-blend-mode: screen;
+}
+
+/* WELCOME SECTION */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 240px 0px;
+    margin-top: 50px;
+}
+
+.welcome-left {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+/* .welcome-center { flex: 1; text-align: center; } */
+
+/* GRID LAYOUTS (RULES, BUDGET, EARN) */
+.rules-grid,
+.budget-cards,
+.earn-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.budget-card {
+    background: linear-gradient(180deg, #111D1D 0%, #182828 100%);
+    border-radius: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+.content {
+    /* position: relative; */
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rule-icon {
+    min-width: 44px;
+    height: 44px;
+    text-align: center !important;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.rule-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.rule-bx {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rule-item>h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 170%;
+}
+
+li {
+    line-height: 170%;
+
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 12px;
+    margin: 0;
+    font-size: 14px;
+}
+
+li {
+    /* Đặt li là container Flexbox */
+    display: flex;
+    /* Căn chỉnh nội dung (chữ) và gạch ngang ở giữa theo chiều dọc */
+    align-items: center;
+
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #ABC0C0;
+}
+
+li::before {
+    content: "";
+
+    /* ------------- THIẾT LẬP GẠCH NGANG ------------- */
+    /* Chiều dài gạch ngang: đây là phần "thụt vào" */
+    width: 18px;
+    height: 4px;
+
+    /* Thụt vào 15px giữa gạch ngang và nội dung */
+    margin-right: 34px;
+
+    background-color: #00FFC2;
+    border-radius: 2px;
+
+    /* Hiệu ứng phát sáng */
+    box-shadow: 0 0 8px rgba(0, 255, 194, 0.8),
+        0 0 15px rgba(0, 255, 194, 0.5);
+
+    /* Đảm bảo nó không bị co lại nếu nội dung quá dài */
+    flex-shrink: 0;
+}
+
+.g::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    /* Bắt đầu từ mép trái của padding-left */
+    top: 50%;
+    /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%);
+    /* Dịch lên 50% chiều cao của chính nó */
+
+    /* ------------- TẠO THANH NGANG PHÁT SÁNG ------------- */
+    width: 18px;
+    /* Chiều dài của thanh ngang */
+    height: 4px;
+    /* Độ dày của thanh ngang */
+    background-color: #00FFC2;
+    /* Màu xanh neon */
+    border-radius: 2px;
+    /* Bo tròn nhẹ các cạnh để mềm mại hơn */
+
+    /* Hiệu ứng phát sáng */
+    box-shadow: 0 0 8px rgba(0, 255, 194, 0.8),
+        /* Ánh sáng chính */
+        0 0 15px rgba(0, 255, 194, 0.5);
+    /* Ánh sáng lan tỏa */
+}
+
+/* .rule-item, .budget-card, .earn-card {
+    /* background-color: var(--accent-dark); */
+/* padding: 30px; */
+/* border-radius: 8px; */
+/* border: 1px solid rgba(0, 255, 194, 0.2); */
+/* Tạo khoảng cách dưới tiêu đề Earn Section */
+
+.earn-section .section-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-i2e {
+    max-width: 400px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+p {
+    font-size: 14px;
+    color: #ABC0C0;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.earn-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 50px auto;
+}
+
+/* ------------------- FOOTER CỐ ĐỊNH Ở DƯỚI ------------------- */
+.bottom-footer {
+    bottom: 0;
+    /* Đặt sát mép dưới */
+    left: 0;
+    width: 100vw;
+    height: 400px;
+    /* Chiều cao footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Thiết lập nền: dùng màu hơi tối hơn nền chính để footer nổi bật */
+    background: radial-gradient(61.32% 57.08% at 50% 82.93%, #315856 0%, #080D0D 100%);
+    ;
+
+    /* Hiệu ứng mờ (blur) ở mép trên (tùy chọn) */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.footer-content {
+    /* Sử dụng Flexbox để căn chỉnh các mục */
+    display: flex;
+    justify-content: center;
+    /* Căn giữa toàn bộ nội dung */
+    align-items: center;
+    position: relative;
+    /* Dùng cho nút cuộn lên */
+}
+
+/* ------------------- LOGO ------------------- */
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.logo-name {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+/* ------------------- NAVIGATION LINKS ------------------- */
+.footer-nav {
+    display: flex;
+    gap: 30px;
+    /* Khoảng cách giữa các liên kết */
+}
+
+.nav-link {
+    color: #999999;
+    /* Màu chữ xám mặc định */
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-decoration: none;
+    padding-bottom: 5px;
+    /* Dùng cho gạch chân */
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+/* Liên kết đang hoạt động (Active) */
+.nav-link.active {
+    color: #00FFC2;
+    /* Màu neon teal */
+    border-bottom: 3px solid #00FFC2;
+    /* Gạch chân phát sáng */
+}
+
+/* ------------------- NÚT CUỘN LÊN ------------------- */
+.scroll-top-btn {
+    position: fixed;
+    right: 40px;
+    /* Căn lề phải */
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: #1a3a4d;
+    /* Màu nền tối hơn */
+    color: #00FFC2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    /* Hiệu ứng phát sáng nhẹ */
+    box-shadow: 0 0 5px rgba(0, 255, 194, 0.6);
+    transition: background-color 0.3s;
+}
+
+.scroll-top-btn:hover {
+    background-color: #0F1D2B;
+}
+
+.pp {
+    width: 50% !important;
+}
+
+.btn2 {
+    display: none;
+}
+
+.sidebar-btn {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: none;
+}
+
+.kaitoy {
+    width: 400px;
+    max-width: 400px;
+    margin-bottom: 24px;
+}
+
+/* ------------------- 1. CẤU TRÚC SIDEBAR ------------------- */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+    /* Nền trắng như trong ảnh */
+    color: black;
+
+    /* Mặc định ẩn sidebar: dịch chuyển ra ngoài màn hình */
+    transform: translateX(-100%);
+
+    /* Hiệu ứng chuyển động mượt mà */
+    transition: transform 0.5s ease-in-out;
+
+    z-index: 2000;
+    /* Luôn nằm trên mọi thứ */
+
+    /* Thiết lập bố cục nội dung */
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+/* Class mở sidebar (được thêm bằng JavaScript) */
+.sidebar-overlay.open {
+    /* Đưa sidebar trở lại vị trí 0 (hiện) */
+    transform: translateX(0);
+}
+
+/* ------------------- 2. NÚT ĐÓNG ------------------- */
+.close-btn {
+    align-self: flex-end;
+    /* Căn nút sang phải */
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    color: black;
+}
+
+.close-btn span {
+    font-size: 1.5em;
+    margin-left: 5px;
+}
+
+/* ------------------- 3. MENU NAVIGATION ------------------- */
+.sidebar-nav {
+    /* Đẩy menu xuống giữa màn hình */
+    margin-top: 15vh;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    position: relative;
+    /* Dùng font size rất lớn như trong ảnh */
+    font-size: 5em;
+    font-weight: 900;
+    line-height: 1.2;
+    overflow: hidden;
+    /* Quan trọng cho hiệu ứng chữ lớn */
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    display: inline-block;
+    /* Quan trọng cho hiệu ứng hover */
+}
+
+.sidebar-nav a:hover {
+    color: #4a4a4a;
+    /* Làm mờ khi hover */
+}
+
+/* ------------------- 4. HIỆU ỨNG ĐÁNH SỐ THỨ TỰ (STAGGERED NUMBERING) ------------------- */
+
+.sidebar-nav li::after {
+    content: '';
+    /* Mặc định không có nội dung */
+    position: absolute;
+    top: 10%;
+    right: 0;
+    font-size: 0.25em;
+    /* Kích thước nhỏ so với chữ chính */
+    color: #5227FF;
+    /* Màu xanh tím */
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+}
+
+/* Sử dụng CSS content để tạo số thứ tự */
+.menu-item-01::after {
+    content: '01';
+}
+
+.menu-item-02::after {
+    content: '02';
+}
+
+.menu-item-03::after {
+    content: '03';
+}
+
+.menu-item-04::after {
+    content: '04';
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .welcome-section {
+        width: 100%;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 240px 20px;
+    }
+
+    .spider-img {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .rules-section {
+        width: 100%;
+        padding: 200px 20px !important;
+    }
+
+    .rules-grid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+
+    .budget-section {
+        width: 100%;
+        padding: 200px 20px !important;
+
+    }
+
+    .budget-cards {
+        overflow: scroll;
+    }
+
+    .budget-cards .budget-card {
+        height: 280px;
+        width: 360px;
+    }
+
+    .earn-section {
+        padding: 200px 20px !important;
+    }
+
+    .welcome-left {
+        width: 100% !important;
+        flex-direction: column !important;
+        /* gap: 60px !important; */
+    }
+
+    .title-i2e {
+        width: 100% !important;
+
+    }
+
+    .pp {
+        width: 100% !important;
+    }
+
+    p {
+        width: 100% !important;
+    }
+
+    .welcome-left a {
+        display: none;
+    }
+
+    .btn2 {
+        margin-top: 40px;
+        display: block;
+    }
+
+
+    .nav-links {
+        display: none;
+    }
+
+
+    .header {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .header-content {
+        min-width: 300px;
+        width: 100%;
+    }
+
+    .header-content .action-btn {
+        display: none;
+    }
+
+    .sidebar-btn {
+        display: block;
+    }
+
+    .bottom-footer {
+        width: 100%;
+        height: 500px;
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        width: 100%;
+    }
+
+    .footer-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-logo {
+        width: 100%;
+        max-width: max-content;
+    }
+
+    .kaitoy {
+        width: 100%;
+    }
+
+    .light {
+        width: 320px;
+        top: -20px;
+        left: -20px
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+
+
+    aside {
+        display: block;
+    }
+
+    .sidebar-nav {
+        margin-top: 10vh;
+    }
+
+    .sidebar-nav ul li {
+        font-size: 32px;
+    }
+}

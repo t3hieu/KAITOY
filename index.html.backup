@@ -1,0 +1,233 @@
++ Close
+</button>
+
+<nav class="sidebar-nav">
+    <ul>
+        <li class="menu-item-01"><a href="#wel">WELCOME</a></li>
+        <li class="menu-item-02"><a href="#how">HOW'S IT PLAY?</a></li>
+        <li class="menu-item-03"><a href="#hidden">HIDDEN GEM?</a></li>
+        <li class="menu-item-04"><a href="#i2e">I2E PROTOCOL</a></li>
+    </ul>
+    <a href="https://t.me/kaitoyAi_Bot" class="action-btn" style="margin-top: 32px;">Need to Promote</a>
+</nav>
+</aside>
+
+<header class="header">
+
+    <div class="header-content">
+        <img src="img/Kaitoy logo full.png" alt="logo">
+        <nav class="nav-links">
+            <a href="#wel">Welcome</a>
+            <a href="#how">How’s it play?</a>
+            <a href="#hidden">Hidden Gem?</a>
+            <a href="#i2e">I2E Protocol</a>
+        </nav>
+        <a href="https://t.me/kaitoyAi_Bot" class="action-btn">Need to Promote</a>
+        <img src="img/Btn menu.svg" alt="" class="sidebar-btn" id="open-btn">
+    </div>
+
+</header>
+
+<section class="hero-section container">
+    <img src="img/Light.png" class="light">
+    <div class="hero-image-container">
+        <video class="hero-video" style="max-width:600px " autoplay muted loop>
+            <source src="img/1126.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+    </div>
+    <div class="hero-sidebar">
+        <img src="img/Box-ct.png" alt="" style="width: 320px;">
+        <img src="img/Box-ct-1.png" alt="" style="width: 320px;">
+        <img src="img/Box-ct-2.png" alt="" style="width: 320px;">
+        <img src="img/Box-ct-3.png" alt="" style="width: 320px;">
+        <img src="img/Box-ct-4.png" alt="" style="width: 320px;">
+    </div>
+</section>
+
+<section class="welcome-section container" id="wel">
+    <div class="welcome-left" style="max-width:400px;">
+        <h3 class="mini-title" style="color: #32FFDC;">Why Earn "Points" <br>When You Can Get "USDT"?</h3>
+        <h2>Welcome to Kaitoy.ai – The "popular" InfoFi playground.</h2>
+        <p style="color: #ABC0C0;">We are not Kaito. We are Kaitoy - Where small projects are listened to, and
+            quality communities are well compensated.</p>
+    </div>
+
+    <img src="img/Image Spider.png" class="spider-img" style="max-width: 480px;" alt="Image Spider">
+
+    <div style="display: flex; flex-direction: column; gap: 20px; width: fit-content; min-width: 220px;">
+        <a href="https://t.me/kaitoyAi_Bot" class="action-btn" style="width: fit-content;">Need to Promote ></a>
+        <a href="https://t.me/kaitoyAi_Bot" class="action-btn" style="width: fit-content;">Become Contributor ></a>
+    </div>
+</section>
+
+<section class="rules-section container" style="padding: 160px 0;" id="how">
+    <div class="welcome-left" style="max-width:400px; margin-bottom: 40px;">
+        <h3 class="mini-title" style="color: #32FFDC;">How it "Plays"</h3>
+        <h2>Simple Game Rules at Kaitoy Playground</h2>
+    </div>
+    <div class="rules-grid">
+        <div class="rule-bx">
+            <div class="rule-item"><span class="rule-icon">I</span>
+                <h3>TASK CREATION PROJECT</h3>
+            </div>
+            <ul>
+                <li>Project deposits USDT and creates tasks (Tweet, Like, Retweet...).</li>
+                <li>'Affordable' costs for real community outreach.</li>
+            </ul>
+        </div>
+        <div class="rule-bx">
+            <div class="rule-item">
+                <span class="rule-icon">2</span>
+                <h3>"KAITOYERS" RECEIVED THE TASK</h3>
+            </div>
+            <ul>
+                <li>Only approved members can see and receive tasks.</li>
+                <li>Complete on X (Twitter) and submit proof.</li>
+            </ul>
+        </div>
+        <div class="rule-bx">
+            <div class="rule-item">
+                <span class="rule-icon">3</span>
+                <h3>RECEIVE USDT IMMEDIATELY</h3>
+            </div>
+            <ul>
+                <li>Verification system. Ting! USDT is sent straight to your wallet.</li>
+                <li>No 'points'. No waiting.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="budget-section container" style="padding: 240px 0;" id="hidden">
+    <div class="welcome-left" style="max-width:400px; margin-bottom: 60px;">
+        <h3 class="mini-title" style="color: #32FFDC;">For Projects<br>(Looking for "Hidden Gem")</h3>
+        <h2>
+            <span style="color: #32FFDC;">"Chestnut"</span> Budget – <span style="color: #32FFDC;">"Max Ping"</span>
+            Efficiency.
+        </h2>
+    </div>
+    <div class="budget-cards">
+        <div class="budget-card">
+            <img src="img/robot.png" style="height: 100%;">
+            <div class="content" style="padding: 20px 20px 20px 0px; height: max-content;">
+                <h4>Quality Over Quantity</h4>
+                <p class="card-text" style="color: #ABC0C0;">Placeholder text for the first tokenomic principle.</p>
+            </div>
+        </div>
+
+        <div class="budget-card">
+            <img src="img/check.png" style="height: 100%;">
+            <div class="content" style="padding: 20px 20px 20px 0px; height: max-content;">
+                <h4>X explosion</h4>
+                <p class="card-text" style="color: #ABC0C0;">Generate buzz from an active, verified community.</p>
+            </div>
+        </div>
+
+        <div class="budget-card">
+            <img src="img/hand.png" style="height: 100%;">
+            <div class="content" style="padding: 20px 20px 20px 0px; height: max-content;">
+                <h4>Pay for Results</h4>
+                <p class="card-text" style="color: #ABC0C0;">You only pay when the task is completed. Clear,
+                    transparent.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="earn-section container" style="padding: 240px 0;" id="i2e">
+    <div class="welcome-left" style="flex-direction: row; width: 100%;margin-bottom: 60px;">
+        <div class="title-i2e" style=" width:30%; max-width: 400px;">
+            <h2 class="mini-title" style="line-height: 120%;">
+                <span style="color: #32FFDC;">"Interact-to-Earn"</span> (I2E) In USDT
+            </h2>
+            <h3 style="color: #fff;">But Not For Everyone.</h3>
+        </div>
+        <div class="pp">
+            <p style="width: 75%; ">"Real USDT earnings" require "real community". To protect the quality of
+                projects and ensure high rewards for members, Kaitoy is currently operating in Private Beta mode. We
+                do not accept it en masse.<br><br> We look for serious "Kaitoyers" who understand the value of
+                quality interactions.</p>
+        </div>
+        <a href="#" class="action-btn" style="height: 44px; width: 200px;">Register to Join ></a>
+    </div>
+    <ul>
+        <li style="font-size: 16px; font-weight: 700;color: #fff;">Why should you apply?</li>
+    </ul>
+    <div class="budget-cards">
+        <div class="budget-card">
+            <img src="img/token.png" style="height: 100%;">
+            <div class="content" style="padding: 20px 20px 20px 0px; height: max-content;">
+                <h4>Quality Over Quantity</h4>
+                <p class="card-text" style="color: #ABC0C0;">Placeholder text for the first tokenomic principle.</p>
+            </div>
+        </div>
+
+        <div class="budget-card">
+            <img src="img/shape.png" style="height: 100%;">
+            <div class="content" style="padding: 20px 20px 20px 0px; height: max-content;">
+                <h4>X explosion</h4>
+                <p class="card-text" style="color: #ABC0C0;">Generate buzz from an active, verified community.</p>
+            </div>
+        </div>
+
+        <div class="budget-card">
+            <img src="img/robot.png" style="height: 100%;">
+            <div class="content" style="padding: 20px 20px 20px 0px; height: max-content;">
+                <h4>Pay for Results</h4>
+                <p class="card-text" style="color: #ABC0C0;">You only pay when the task is completed. Clear,
+                    transparent.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://t.me/kaitoyAi_Bot" class="action-btn btn2"
+        style="height: 44px; width: 200px; overflow: hidden;">Register to
+        Join
+        ></a>
+</section>
+
+
+<footer class="bottom-footer">
+    <div class="footer-content" style="width: auto; height: max-content; position:relative;">
+        <div class="footer-logo" style="width: 100%;">
+            <img src="img/Kaitoy logo large.png" class="kaitoy" alt="KAITOY Avatar" s>
+            <nav class="footer-nav">
+                <a href="#wel" class="nav-link">Welcome</a>
+                <a href="#how" class="nav-link">How's it play?</a>
+                <a href="#hidden" class="nav-link">Hidden Gem?</a>
+                <a href="#i2e" class="nav-link">I2E Protocol</a>
+            </nav>
+        </div>
+    </div>
+    <a href="#top" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 1. Lấy các phần tử
+        const sidebar = document.getElementById('full-screen-sidebar');
+        const closeBtn = document.getElementById('close-sidebar-btn');
+
+        // Giả sử bạn có nút mở trong header với ID 'open-sidebar-btn'
+        const openBtn = document.getElementById('open-btn');
+
+        // 2. Chức năng Mở
+        if (openBtn) {
+            openBtn.addEventListener('click', function () {
+                sidebar.classList.add('open');
+            });
+        }
+
+        // 3. Chức năng Đóng
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                sidebar.classList.remove('open');
+            });
+        }
+    });
+</script>
+</body>
+
+</html>
