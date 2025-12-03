@@ -185,7 +185,7 @@ h2 {
 
 /* .logo { font-size: 1.8em; font-weight: 700; } */
 .nav-links a {
-    margin-left: 30px;
+    margin-left: 16px;
     color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
@@ -793,4 +793,5 @@ p {
     .sidebar-nav ul li {
         font-size: 32px;
     }
+
 }
