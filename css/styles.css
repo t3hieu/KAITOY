@@ -23,15 +23,27 @@
     box-sizing: border-box;
 }
 
+html {
+    /* Using min-height ensures it covers viewport but grows with content */
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
     background-color: #080D0D;
     color: var(--text-color);
-    font-family: "Orbitron", sans-serif;
+    font-family: "IBM Plex Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     line-height: 1.7rem;
-    width: 100vw;
+    width: 100%;
 }
 
 a {
@@ -185,10 +197,16 @@ h2 {
 
 /* .logo { font-size: 1.8em; font-weight: 700; } */
 .nav-links a {
-    margin-left: 16px;
     color: var(--text-color);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
 }
 
 
@@ -199,40 +217,249 @@ h2 {
 /* HERO SECTION */
 .hero-section {
     display: flex;
-    justify-content: space-between;
-    padding: 200px 20px 100px 20px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    width: 100%;
     position: relative;
-
 }
 
-.light {
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    mix-blend-mode: screen;
+.hero-header-container h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    color: #fff;
+    font-weight: 700;
 }
 
+.hero-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+/* 
+   Wrapper for comparison columns. 
+   On Desktop: display: contents allows children to sit directly in the grid.
+*/
+.hero-comparison-slider {
+    display: contents;
+}
+
+.hero-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Removed flex: 1 to allow space-between to distribute space */
+    width: 100%;
+    max-width: 320px;
+    /* Constrain width of side columns */
+}
+
+/* Desktop Ordering */
+.hero-left {
+    order: 1;
+}
+
+.hero-center {
+    order: 2;
+    max-width: 600px;
+    /* Allow center to be wider */
+    /* If we want space-between, we shouldn't let them fill everything. */
+    flex: 0 1 auto;
+    width: auto;
+}
+
+.hero-right {
+    order: 3;
+}
+
+/* Left & Right Numbers */
+.hero-number {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.hero-number.red {
+    color: #FF3232;
+}
+
+.hero-number.green {
+    color: #32FFDC;
+}
+
+/* List Styling */
+.hero-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Red Items (CSS styled) */
+.hero-item.red-item {
+    background: rgba(255, 50, 50, 0.05);
+    border: 1px solid rgba(255, 50, 50, 0.2);
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 320px;
+    color: #FF3232;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 50px;
+}
+
+.hero-item .icon {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 4px;
+    /* Keep line-height tight for icons */
+}
+
+/* Green Items (CSS styled to match Red) */
+.hero-item.green-item {
+    background: rgba(50, 255, 220, 0.05);
+    border: 1px solid rgba(50, 255, 220, 0.2);
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 320px;
+    color: #32FFDC;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 50px;
+}
+
+/* Green Items (Images) */
+.hero-box-img {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+    display: block;
+}
+
+/* Center Column */
+.hero-center {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+    /* Ensure space is reserved */
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Removed mask for debugging compatibility */
+}
+
+
+
+/* WELCOME SECTION */
 /* WELCOME SECTION */
 .welcome-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 240px 0px;
+    padding: 100px 0;
     margin-top: 50px;
+    text-align: center;
 }
 
-.welcome-left {
+.welcome-header {
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
     display: flex;
-    gap: 16px;
     flex-direction: column;
+    align-items: center;
 }
 
-/* .welcome-center { flex: 1; text-align: center; } */
+.welcome-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #fff;
+}
 
-/* GRID LAYOUTS (RULES, BUDGET, EARN) */
-.rules-grid,
+/* 3-Column Grid */
+.welcome-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.welcome-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-col {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.right-col {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.center-col {
+    flex: 1.5;
+    /* Give center more space if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spider-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.col-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Existing button - reuse or adjust spacing if generic styles aren't enough */
+.welcome-col .action-btn {
+    width: fit-content;
+}
+
+/* GRID LAYOUTS (BUDGET, EARN) */
 .budget-cards,
 .earn-cards {
     display: grid;
@@ -241,6 +468,24 @@ h2 {
     width: 100%;
 }
 
+
+.gem-card {
+    background: linear-gradient(180deg, #111D1D 0%, #182828 100%);
+    border-radius: 20px;
+    height: auto;
+    /* Allow flexible height */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    /* Changed from row to column */
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    text-align: left;
+    padding: 0;
+}
+
+/* Restore original budget-card for Earn section compatibility */
 .budget-card {
     background: linear-gradient(180deg, #111D1D 0%, #182828 100%);
     border-radius: 20px;
@@ -249,7 +494,48 @@ h2 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* gap: 20px; */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(50, 255, 220, 0.1) 0%, transparent 70%);
+    padding: 0;
+    /* Removed padding to let image fill space */
+}
+
+.card-img-top img {
+    width: 100%;
+    /* Maximize width */
+    height: 100%;
+    /* Maximize height */
+    object-fit: cover;
+    /* Fill the area as requested "bao quát" often implies cover */
+}
+
+.card-body-bottom {
+    padding: 20px 24px 30px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: transparent;
+}
+
+.card-body-bottom h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.card-body-bottom .card-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ABC0C0;
 }
 
 .content {
@@ -258,34 +544,6 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.rule-icon {
-    min-width: 44px;
-    height: 44px;
-    text-align: center !important;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-}
-
-.rule-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-.rule-bx {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.rule-item>h3 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 170%;
 }
 
 li {
@@ -333,32 +591,70 @@ li::before {
     flex-shrink: 0;
 }
 
-.g::before {
-    content: "-";
-    position: absolute;
-    left: 0;
-    /* Bắt đầu từ mép trái của padding-left */
-    top: 50%;
-    /* Căn giữa theo chiều dọc */
-    transform: translateY(-50%);
-    /* Dịch lên 50% chiều cao của chính nó */
-
-    /* ------------- TẠO THANH NGANG PHÁT SÁNG ------------- */
-    width: 18px;
-    /* Chiều dài của thanh ngang */
-    height: 4px;
-    /* Độ dày của thanh ngang */
-    background-color: #00FFC2;
-    /* Màu xanh neon */
-    border-radius: 2px;
-    /* Bo tròn nhẹ các cạnh để mềm mại hơn */
-
-    /* Hiệu ứng phát sáng */
-    box-shadow: 0 0 8px rgba(0, 255, 194, 0.8),
-        /* Ánh sáng chính */
-        0 0 15px rgba(0, 255, 194, 0.5);
-    /* Ánh sáng lan tỏa */
+/* RULES SECTION CSS */
+.rules-section {
+    background: linear-gradient(180deg, rgba(17, 29, 29, 0.3) 0%, rgba(69, 115, 114, 0.3) 100%);
+    width: 100%;
 }
+
+.rules-grid {
+    display: flex;
+    /* Use flex to control row behavior easily or grid */
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    gap: 40px;
+    /* Space between cards */
+    justify-content: center;
+    /* Center items */
+    width: 100%;
+    margin-top: 40px;
+}
+
+.rule-card {
+    flex: 1;
+    /* Distribute space evenly */
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.rule-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Optional: add a bit of shallow shadow or border if needed, similar to budget cards? */
+}
+
+.rule-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+
+/* Style variants for step 2 and 3 if needed, but uniform style is usually better */
+
+.rule-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.rule-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ABC0C0;
+}
+
 
 /* .rule-item, .budget-card, .earn-card {
     /* background-color: var(--accent-dark); */
@@ -395,12 +691,13 @@ p {
 
 /* ------------------- FOOTER CỐ ĐỊNH Ở DƯỚI ------------------- */
 .bottom-footer {
-    bottom: 0;
-    /* Đặt sát mép dưới */
-    left: 0;
-    width: 100vw;
-    height: 400px;
-    /* Chiều cao footer */
+
+    width: 100%;
+    height: 400px !important;
+    min-height: 0 !important;
+    padding: 50px 0 0 0 !important;
+    margin: 0 !important;
+    /* Chiều cao footer tuỳ chỉnh theo nội dung */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -422,6 +719,9 @@ p {
     /* Căn giữa toàn bộ nội dung */
     align-items: center;
     position: relative;
+    padding-bottom: 20px;
+    /* Optional internal spacing if needed, but removing for now to be safe */
+    padding-bottom: 0 !important;
     /* Dùng cho nút cuộn lên */
 }
 
@@ -512,7 +812,7 @@ p {
 .kaitoy {
     width: 400px;
     max-width: 400px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
 
 /* ------------------- 1. CẤU TRÚC SIDEBAR ------------------- */
@@ -613,7 +913,7 @@ p {
     color: #5227FF;
     /* Màu xanh tím */
     font-weight: normal;
-    font-family: Arial, sans-serif;
+    font-family: "IBM Plex Mono", monospace;
 }
 
 /* Sử dụng CSS content để tạo số thứ tự */
@@ -634,21 +934,111 @@ p {
 }
 
 /* Mobile */
+/* Budget Split Content (Desktop Defaults) */
+.budget-split-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 60px 0;
+}
+
+.budget-left {
+    flex: 1;
+}
+
+.budget-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 28px;
+}
+
 @media (max-width: 768px) {
     .hero-section {
         width: 100%;
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    .hero-grid {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        overflow: hidden;
+        gap: 40px;
+    }
+
+    .hero-comparison-slider {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory;
+        /* Snap behavior */
+        gap: 20px;
+        padding-bottom: 20px;
+        /* Space for scrollbar if any/aesthetics */
+
+        /* Hide scrollbar */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+    }
+
+    .hero-comparison-slider::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari/Opera */
+    }
+
+    .hero-col {
+        width: 100%;
+    }
+
+    /* Slider sizing for mobile */
+    .hero-comparison-slider .hero-col {
+        min-width: 80vw;
+        /* Show most of the card, hint at next */
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+    }
+
+    .hero-center {
+        /* Video stays on top in normal flow due to HTML order */
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .hero-header-container h2 {
+        font-size: 24px;
+        padding: 0 20px;
     }
 
     .welcome-section {
-        width: 100%;
+        padding: 100px 20px;
+    }
+
+    .welcome-grid {
         flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        padding: 240px 20px;
+        gap: 40px;
+    }
+
+    .welcome-col {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .left-col,
+    .right-col {
+        text-align: center;
+        align-items: center;
+    }
+
+    .center-col {
+        order: -1;
+        /* Ensure image is on top or meaningful position if desired, or let it stay in middle */
     }
 
     .spider-img {
@@ -663,6 +1053,7 @@ p {
     .rules-section {
         width: 100%;
         padding: 200px 20px !important;
+        background: linear-gradient(180deg, rgba(17, 29, 29, 0.3) 0%, rgba(69, 115, 114, 0.3) 100%);
     }
 
     .rules-grid {
@@ -673,14 +1064,43 @@ p {
         justify-content: start;
     }
 
+    .budget-split-content {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        /* Center everything on mobile */
+        text-align: center;
+    }
+
+    .budget-right {
+        align-items: center;
+        /* Center the button and text */
+        text-align: center;
+    }
+
+    .budget-left {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
     .budget-section {
         width: 100%;
-        padding: 200px 20px !important;
-
+        padding: 50px 20px !important;
     }
 
     .budget-cards {
-        overflow: scroll;
+        display: flex;
+        /* Use flex instead of grid for simpler stacking control if desired, or keep grid 1 col */
+        flex-direction: column;
+        overflow: visible;
+        /* Fix previous scroll setting */
+    }
+
+    .budget-cards .gem-card {
+        width: 100%;
+        margin: 0 auto;
     }
 
     .budget-cards .budget-card {
@@ -692,11 +1112,7 @@ p {
         padding: 200px 20px !important;
     }
 
-    .welcome-left {
-        width: 100% !important;
-        flex-direction: column !important;
-        /* gap: 60px !important; */
-    }
+
 
     .title-i2e {
         width: 100% !important;
@@ -711,9 +1127,7 @@ p {
         width: 100% !important;
     }
 
-    .welcome-left a {
-        display: none;
-    }
+
 
     .btn2 {
         margin-top: 40px;
@@ -746,8 +1160,9 @@ p {
 
     .bottom-footer {
         width: 100%;
-        height: 500px;
-        padding: 0 20px;
+        height: 600px !important;
+        /* Padding top 50, right 20, bottom 0, left 20 */
+        padding: 50px 20px 0 20px !important;
     }
 
     .footer-content {
@@ -768,6 +1183,7 @@ p {
 
     .kaitoy {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .light {
@@ -796,3 +1212,82 @@ p {
 
 }
 
+/* =========================================
+   Navigation Dropdown Styles
+   ========================================= */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #E0E0E0;
+    /* Match nav link color */
+    padding: 0;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropbtn:hover {
+    color: var(--neon-teal);
+}
+
+/* Chevron Icon (Pure CSS) */
+.chevron {
+    display: inline-block;
+    width: 6px;
+    /* Smaller icon matches user request for smaller icons generally */
+    height: 6px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-color: currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-bottom: 2px;
+}
+
+.dropdown.active .chevron {
+    transform: rotate(-135deg);
+    /* Flip up when active */
+}
+
+/* Dropdown Content (Hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #0F1D2B;
+    /* Dark background */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid var(--neon-teal);
+    border-radius: 8px;
+    margin-top: 10px;
+
+}
+
+.dropdown-content a {
+    color: #E0E0E0;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 255, 194, 0.1);
+    color: var(--neon-teal);
+}
+
+/* Show dropdown when active class is added via JS */
+.dropdown.active .dropdown-content {
+    display: block;
+}
