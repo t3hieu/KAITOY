@@ -812,7 +812,7 @@ p {
 .kaitoy {
     width: 400px;
     max-width: 400px;
-    margin-bottom: 0;
+    margin-bottom: 32px;
 }
 
 /* ------------------- 1. CẤU TRÚC SIDEBAR ------------------- */
