@@ -390,6 +390,41 @@
                     }
                 });
             }
+
+            // 5. Scroll Glitch Effect
+            // Select targets: major layout blocks inside sections
+            const glitchTargets = document.querySelectorAll(
+                '.hero-header-container h2, .hero-col, .welcome-header, .welcome-col, .rule-card, .budget-header, .budget-split-content, .budget-cards .gem-card, .earn-section .welcome-header, .earn-section .budget-split-content, .earn-section .budget-cards .gem-card'
+            );
+
+            // Add initial hidden class
+            glitchTargets.forEach(el => {
+                el.classList.add('glitch-hidden');
+            });
+
+            const glitchObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add reveal class to trigger animation
+                        // Using requestAnimationFrame to ensure style updates are processed
+                        requestAnimationFrame(() => {
+                            entry.target.classList.remove('glitch-hidden');
+                            entry.target.classList.add('glitch-reveal');
+                        });
+
+                        // Stop observing once revealed to prevent flickering/hiding
+                        glitchObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Low threshold to trigger early
+            });
+
+            glitchTargets.forEach(el => {
+                glitchObserver.observe(el);
+            });
+
+
         });
     </script>
 </body>
