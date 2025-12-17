@@ -955,6 +955,10 @@ p {
     gap: 28px;
 }
 
+.hero-number {
+    margin-top: 8px;
+}
+
 @media (max-width: 768px) {
     .hero-section {
         width: 100%;
@@ -963,7 +967,7 @@ p {
     }
 
     .hero-grid {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         gap: 40px;
     }
